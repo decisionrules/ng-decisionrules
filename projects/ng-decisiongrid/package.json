@@ -1,7 +1,7 @@
 {
   "name": "@decisiongrid/ng-decisiongrid",
   "description": "A simple Angular library that allows you to easily connect to Decisiongrid.io from your web application.",
-  "version": "1.0.3",
+  "version": "1.0.7",
   "author": "Decisiongrid.io",
   "repository": {
     "type": "git",
@@ -11,12 +11,7 @@
     "url": "https://github.com/decisiongrid/ng-decisiongrid/issues"
   },
   "homepage": "https://github.com/decisiongrid/ng-decisiongrid",
-  "keywords": [
-    "angular",
-    "typescript",
-    "decisiongrid",
-    "rule engine"
-  ],
+
   "license": "MIT",
   "scripts": {
     "ng": "ng",

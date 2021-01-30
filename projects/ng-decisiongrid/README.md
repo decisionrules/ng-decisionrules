@@ -1,24 +1,58 @@
-# NgDecisiongrid
+# ng-decisiongrid
+Connect easily your Angular project with [Decisiongrid.io](https://decisiongrid.io)
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.6.
 
-## Code scaffolding
+## Manual Installation
 
-Run `ng generate component component-name --project ng-decisiongrid` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ng-decisiongrid`.
-> Note: Don't forget to add `--project ng-decisiongrid` or else it will be added to the default project in your `angular.json` file. 
+#### 1. Install Decisiongrid packages through npm:
+````shell
+npm install @decisiongrid/ng-decisiongrid
+````
+#### 2. Generate API key here (https://app.decisiongrid.io/api-keys)
 
-## Build
+#### 3. Import the ClarityModule into your Angular application's module. Your application's main module might look like this:
+````typescript
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import {NgDecisiongridModule} from 'ng-decisiongrid';
 
-Run `ng build ng-decisiongrid` to build the project. The build artifacts will be stored in the `dist/` directory.
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    NgDecisiongridModule.forRoot({
+      token: 'YOUR_API_KEY'
+    })
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+````
 
-## Publishing
 
-After building your library with `ng build ng-decisiongrid`, go to the dist folder `cd dist/ng-decisiongrid` and run `npm publish`.
 
-## Running unit tests
+#### 4. Sove rule
+````typescript
+export class AppComponent implements OnInit {
+  
+  constructor(private decisiongridService: NgDecisiongridService) {
+  }
 
-Run `ng test ng-decisiongrid` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+  ngOnInit(): void {
+    const inputData = {
+      client: {
+        age: 18
+      }
+    };
+    this.decisiongridService.solveRule(inputData, 'YOUR_RULE_ID').then(data => {
+      console.log(data);
+    });
+  }
+}
+````
