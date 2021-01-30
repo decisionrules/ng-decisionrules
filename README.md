@@ -4,7 +4,7 @@ A simple Angular library that allows you to easily connect to [Decisiongrid.io](
 
 ## Manual Installation
 
-#### 1. Install Decisiongrid packages through npm:
+#### 1. Install Decisiongrid packages through [npm](https://www.npmjs.com/package/@decisiongrid/ng-decisiongrid):
 ````shell
 npm install @decisiongrid/ng-decisiongrid
 ````
