@@ -1,27 +1,58 @@
-# NgDecisiongrid
+# ng-decisiongrid
+Connect easily your Angular project with [Decisiongrid.io](https://decisiongrid.io)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.3.
 
-## Development server
+## Manual Installation
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+####1. Install Decisiongrid packages through npm:
+````shell
+npm install @decisiongrid/ng-decisiongrid
+````
+####2. Generate API key here (https://app.decisiongrid.io/api-keys)
 
-## Code scaffolding
+####3. Import the ClarityModule into your Angular application's module. Your application's main module might look like this:
+````typescript
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import {NgDecisiongridModule} from 'ng-decisiongrid';
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    NgDecisiongridModule.forRoot({
+      token: 'YOUR_API_KEY'
+    })
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+````
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
+####4. Sove rule
+````typescript
+export class AppComponent implements OnInit {
+  
+  constructor(private decisiongridService: NgDecisiongridService) {
+  }
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+  ngOnInit(): void {
+    const inputData = {
+      client: {
+        age: 18
+      }
+    };
+    this.decisiongridService.solveRule(inputData, 'YOUR_RULE_ID').then(data => {
+      console.log(data);
+    });
+  }
+}
+````
