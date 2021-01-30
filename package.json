@@ -1,7 +1,7 @@
 {
-  "name": "ng-decisiongrid",
+  "name": "@decisiongrid/ng-decisiongrid",
   "description": "A simple Angular library that allows you to easily connect to Decisiongrid.io from your web application.",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "author": "Decisiongrid.io",
   "repository": {
     "type": "git",
@@ -26,9 +26,10 @@
     "lint": "ng lint",
     "build-library": "ng build ng-decisiongrid",
     "pack-lib": "cd dist/ng-decisiongrid && npm pack",
-    "build-pack": "ng build ng-decisiongrid && cd dist/ng-decisiongrid && npm pack"
+    "build-pack": "ng build ng-decisiongrid && cd dist/ng-decisiongrid && npm pack",
+    "build-prod": "ng build --prod"
   },
-  "private": true,
+  "private": false,
   "dependencies": {
     "@angular/common": "~10.1.3",
     "@angular/compiler": "~10.1.3",
@@ -57,5 +58,15 @@
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
     "typescript": "~4.0.2"
-  }
+  },
+  "description": "Connect easily your Angular project with [Decisiongrid.io](https://decisiongrid.io)",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/decisiongrid/ng-decisiongrid.git"
+  },
+  "bugs": {
+    "url": "https://github.com/decisiongrid/ng-decisiongrid/issues"
+  },
+  "homepage": "https://github.com/decisiongrid/ng-decisiongrid#readme"
 }
