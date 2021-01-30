@@ -1,5 +1,5 @@
 # ng-decisiongrid
-Connect easily your Angular project with [Decisiongrid.io](https://decisiongrid.io)
+A simple Angular library that allows you to easily connect to [Decisiongrid.io](https://decisiongrid.io) from your web application.
 
 
 ## Manual Installation
