@@ -8,9 +8,11 @@ A simple Angular library that allows you to easily connect to [Decisiongrid.io](
 ````shell
 npm install @decisiongrid/ng-decisiongrid
 ````
-#### 2. Generate API key here (https://app.decisiongrid.io/api-keys)
+#### 2. Generate `API key` here (https://app.decisiongrid.io/api-keys)
 
-#### 3. Import the ClarityModule into your Angular application's module. Your application's main module might look like this:
+#### 3. Import the `NgDecisiongridModule` into your Angular application's module `AppModule`. Your application's main module might look like this:
+
+_app.module.ts_
 ````typescript
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -37,7 +39,10 @@ export class AppModule { }
 
 
 
-#### 4. Sove rule
+#### 4. Solve rule
+You can create rule on [Decisiongrid dashboard](https://app.decisiongrid.io)
+
+_app.component.ts_
 ````typescript
 export class AppComponent implements OnInit {
   
