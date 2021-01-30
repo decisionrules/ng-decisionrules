@@ -4,13 +4,13 @@ Connect easily your Angular project with [Decisiongrid.io](https://decisiongrid.
 
 ## Manual Installation
 
-####1. Install Decisiongrid packages through npm:
+#### 1. Install Decisiongrid packages through npm:
 ````shell
 npm install @decisiongrid/ng-decisiongrid
 ````
-####2. Generate API key here (https://app.decisiongrid.io/api-keys)
+#### 2. Generate API key here (https://app.decisiongrid.io/api-keys)
 
-####3. Import the ClarityModule into your Angular application's module. Your application's main module might look like this:
+#### 3. Import the ClarityModule into your Angular application's module. Your application's main module might look like this:
 ````typescript
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -37,7 +37,7 @@ export class AppModule { }
 
 
 
-####4. Sove rule
+#### 4. Sove rule
 ````typescript
 export class AppComponent implements OnInit {
   
