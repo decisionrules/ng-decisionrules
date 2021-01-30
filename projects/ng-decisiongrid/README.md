@@ -4,13 +4,16 @@ A simple Angular library that allows you to easily connect to [Decisiongrid.io](
 
 ## Manual Installation
 
-#### 1. Install Decisiongrid packages through [npm](https://www.npmjs.com/package/@decisiongrid/ng-decisiongrid):
+### 1. Installation
+Install Decisiongrid packages through [npm](https://www.npmjs.com/package/@decisiongrid/ng-decisiongrid):
 ````shell
 npm install @decisiongrid/ng-decisiongrid
 ````
-#### 2. Generate `API key` here (https://app.decisiongrid.io/api-keys)
+### 2. Generate API key
+You can create your `API key` here: https://app.decisiongrid.io/api-keys
 
-#### 3. Import the `NgDecisiongridModule` into your Angular application's module `AppModule`. Your application's main module might look like this:
+### 3. Setup Angular Modules
+Import the `NgDecisiongridModule` into your Angular application's module `AppModule`. Your application's main module might look like this:
 
 _app.module.ts_
 ````typescript
@@ -39,7 +42,7 @@ export class AppModule { }
 
 
 
-#### 4. Solve rule
+### 4. Solve rule
 You can create rule on [Decisiongrid dashboard](https://app.decisiongrid.io)
 
 _app.component.ts_
