@@ -1,4 +1,4 @@
-# ng-decisiongrid
+# ng-decisionrules
 A simple Angular library that allows you to easily connect to [Decisionrules.io](https://decisionrules.io) from your web application.
 
 
