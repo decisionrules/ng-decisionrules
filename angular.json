@@ -3,38 +3,38 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ng-decisiongrid": {
+    "ng-decisionrules": {
       "projectType": "library",
-      "root": "projects/ng-decisiongrid",
-      "sourceRoot": "projects/ng-decisiongrid/src",
+      "root": "projects/ng-decisionrules",
+      "sourceRoot": "projects/ng-decisionrules/src",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "tsConfig": "projects/ng-decisiongrid/tsconfig.lib.json",
-            "project": "projects/ng-decisiongrid/ng-package.json"
+            "tsConfig": "projects/ng-decisionrules/tsconfig.lib.json",
+            "project": "projects/ng-decisionrules/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/ng-decisiongrid/tsconfig.lib.prod.json"
+              "tsConfig": "projects/ng-decisionrules/tsconfig.lib.prod.json"
             }
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/ng-decisiongrid/src/test.ts",
-            "tsConfig": "projects/ng-decisiongrid/tsconfig.spec.json",
-            "karmaConfig": "projects/ng-decisiongrid/karma.conf.js"
+            "main": "projects/ng-decisionrules/src/test.ts",
+            "tsConfig": "projects/ng-decisionrules/tsconfig.spec.json",
+            "karmaConfig": "projects/ng-decisionrules/karma.conf.js"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/ng-decisiongrid/tsconfig.lib.json",
-              "projects/ng-decisiongrid/tsconfig.spec.json"
+              "projects/ng-decisionrules/tsconfig.lib.json",
+              "projects/ng-decisionrules/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -43,5 +43,5 @@
         }
       }
     }},
-  "defaultProject": "ng-decisiongrid"
+  "defaultProject": "ng-decisionrules"
 }

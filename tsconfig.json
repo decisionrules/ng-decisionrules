@@ -16,9 +16,9 @@
       "dom"
     ],
     "paths": {
-      "ng-decisiongrid": [
-        "dist/ng-decisiongrid/ng-decisiongrid",
-        "dist/ng-decisiongrid"
+      "ng-decisionrules": [
+        "dist/ng-decisionrules/ng-decisionrules",
+        "dist/ng-decisionrules"
       ]
     }
   }
