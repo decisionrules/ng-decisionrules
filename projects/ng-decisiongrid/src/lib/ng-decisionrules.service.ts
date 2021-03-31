@@ -1,18 +1,18 @@
 import {Inject, Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {InputData} from './models/inputData';
-import {DECISIONGRID_CONFIG} from './ng-decisiongrid.module';
-import {DecisiongridAuth} from './models/decisiongridAuth';
+import {DECISIONRULES_CONFIG} from './ng-decisionrules.module';
+import {DecisionrulesAuth} from './models/decisionrulesAuth';
 
 @Injectable({
   providedIn: 'root'
 })
-export class NgDecisiongridService<T = any> {
-  constructor(@Inject(DECISIONGRID_CONFIG) private config: DecisiongridAuth, private http: HttpClient) {
+export class NgDecisionrulesService<T = any> {
+  constructor(@Inject(DECISIONRULES_CONFIG) private config: DecisionrulesAuth, private http: HttpClient) {
   }
 
 
-  private apiUrl = 'http://api.decisiongrid.io';
+  private apiUrl = 'http://api.decisionrules.io';
 
   public solveRule(inputData: T, ruleId: string, version?: number): Promise<T> {
     let url;

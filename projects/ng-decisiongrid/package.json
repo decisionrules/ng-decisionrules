@@ -1,28 +1,28 @@
 {
-  "name": "@decisiongrid/ng-decisiongrid",
-  "description": "A simple Angular library that allows you to easily connect to Decisiongrid.io from your web application.",
+  "name": "@decisionrules/ng-decisionrules",
+  "description": "A simple Angular library that allows you to easily connect to Decisionrules.io from your web application.",
   "version": "1.0.23",
-  "author": "Decisiongrid.io",
+  "author": "Decisionrules.io",
   "repository": {
     "type": "git",
-    "url": "https://github.com/decisiongrid/ng-decisiongrid.git"
+    "url": "https://github.com/decisionrules/ng-decisionrules.git"
   },
   "bugs": {
-    "url": "https://github.com/decisiongrid/ng-decisiongrid/issues"
+    "url": "https://github.com/decisionrules/ng-decisionrules/issues"
   },
-  "homepage": "https://github.com/decisiongrid/ng-decisiongrid",
+  "homepage": "https://github.com/decisionrules/ng-decisionrules",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "test": "ng test",
     "lint": "ng lint",
-    "build-library": "ng build ng-decisiongrid",
-    "pack-lib": "cd dist/ng-decisiongrid && npm pack",
-    "build-pack": "ng build ng-decisiongrid && cd dist/ng-decisiongrid && npm pack",
+    "build-library": "ng build ng-decisionrules",
+    "pack-lib": "cd dist/ng-decisionrules && npm pack",
+    "build-pack": "ng build ng-decisionrules && cd dist/ng-decisionrules && npm pack",
     "copy-readme": "copy README.md ..\\..\\README.md /y",
     "build": "npm run copy-readme && npm version patch && ng build --prod",
-    "publish": "cd ../../dist/ng-decisiongrid && npm publish"
+    "publish": "cd ../../dist/ng-decisionrules && npm publish"
   },
   "peerDependencies": {
     "@angular/common": "^10.1.6",

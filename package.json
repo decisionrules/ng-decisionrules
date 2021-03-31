@@ -1,6 +1,6 @@
 {
   "name": "@decisionrules/main",
-  "description": "A simple Angular library that allows you to easily connect to Decisionrules.io from your web application.",
+  "description": "Connect easily your Angular project with [Decisionrules.io](https://decisionrules.io)",
   "version": "1.0.5",
   "author": "Decisionrules.io",
   "license": "MIT",
@@ -46,14 +46,13 @@
     "tslint": "~6.1.0",
     "typescript": "~4.0.2"
   },
-  "description": "Connect easily your Angular project with [Decisiongrid.io](https://decisiongrid.io)",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/decisiongrid/ng-decisiongrid.git"
+    "url": "git+https://github.com/decisionrules/ng-decisionrules.git"
   },
   "bugs": {
-    "url": "https://github.com/decisiongrid/ng-decisiongrid/issues"
+    "url": "https://github.com/decisionrules/ng-decisionrules/issues"
   },
-  "homepage": "https://github.com/decisiongrid/ng-decisiongrid#readme"
+  "homepage": "https://github.com/decisionrules/ng-decisionrules#readme"
 }

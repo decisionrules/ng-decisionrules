@@ -1,6 +1,6 @@
 /*
- * Public API Surface of ng-decisiongrid
+ * Public API Surface of ng-decisionrules
  */
 
-export * from './lib/ng-decisiongrid.service';
-export * from './lib/ng-decisiongrid.module';
+export * from './lib/ng-decisionrules.service';
+export * from './lib/ng-decisionrules.module';
