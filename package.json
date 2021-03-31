@@ -1,8 +1,8 @@
 {
-  "name": "@decisiongrid/main",
-  "description": "A simple Angular library that allows you to easily connect to Decisiongrid.io from your web application.",
+  "name": "@decisionrules/main",
+  "description": "A simple Angular library that allows you to easily connect to Decisionrules.io from your web application.",
   "version": "1.0.5",
-  "author": "Decisiongrid.io",
+  "author": "Decisionrules.io",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
@@ -10,11 +10,11 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "build-library": "ng build ng-decisiongrid",
-    "pack-lib": "cd dist/ng-decisiongrid && npm pack",
-    "build-pack": "ng build ng-decisiongrid && cd dist/ng-decisiongrid && npm pack",
+    "build-library": "ng build ng-decisionrules",
+    "pack-lib": "cd dist/ng-decisionrules && npm pack",
+    "build-pack": "ng build ng-decisionrules && cd dist/ng-decisionrules && npm pack",
     "build-prod": "ng build --prod",
-    "publish": "cd dist/ng-decisiongrid && npm publish"
+    "publish": "cd dist/ng-decisionrules && npm publish"
   },
   "private": false,
   "dependencies": {
