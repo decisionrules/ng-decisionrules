@@ -7,7 +7,7 @@ A simple Angular library that allows you to easily connect to [Decisionrules.io]
 ### 1. Installation
 Install Decisiongrid packages through [npm](https://www.npmjs.com/package/@decisiongrid/ng-decisiongrid):
 ````shell
-npm install @decisiongrid/ng-decisiongrid
+npm install @decisiongrid/ng-decisionrules
 ````
 ### 2. Generate API key
 You can create your `API key` here: https://app.decisionrules.io/api-keys
@@ -21,7 +21,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {NgDecisiongridModule} from 'ng-decisiongrid';
+import {NgDecisiongridModule} from 'ng-decisionrules';
 
 @NgModule({
   declarations: [
