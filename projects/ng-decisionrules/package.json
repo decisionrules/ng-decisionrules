@@ -1,7 +1,7 @@
 {
   "name": "@decisionrules/ng-decisionrules",
   "description": "A simple Angular library that allows you to easily connect to Decisionrules.io from your web application.",
-  "version": "1.0.23",
+  "version": "1.0.28",
   "author": "Decisionrules.io",
   "repository": {
     "type": "git",

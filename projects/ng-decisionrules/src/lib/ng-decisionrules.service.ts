@@ -12,14 +12,14 @@ export class NgDecisionrulesService<T = any> {
   }
 
 
-  private apiUrl = 'http://api.decisionrules.io';
+  private apiUrl = 'api.decisionrules.io';
 
-  public solveRule(inputData: T, ruleId: string, version?: number): Promise<T> {
+  public solveRule(inputData: T, ruleId: string, geoloc="eu1", version?: number): Promise<T> {
     let url;
     if (version) {
-      url = `${(this.apiUrl)}/rule/solve/${ruleId}/${version}`;
+      url = `http://${geoloc}.${(this.apiUrl)}/rule/solve/${ruleId}/${version}`;
     } else {
-      url = `${(this.apiUrl)}/rule/solve/${ruleId}/`;
+      url = `http://${geoloc}.${(this.apiUrl)}/rule/solve/${ruleId}/`;
     }
     const data: InputData = {
       data: JSON.parse(JSON.stringify(inputData))
