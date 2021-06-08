@@ -31,7 +31,8 @@ import {NgDecisionrulesModule} from 'ng-decisionrules';
     BrowserModule,
     AppRoutingModule,
     NgDecisionrulesModule.forRoot({
-      token: 'YOUR_API_KEY'
+      auth: {token: 'YOUR_API_KEY_HERE'},
+      geoloc: {geoloc: 'PREFERED_GEOLOC_HERE'} // GEOLOC KEY-PAIR IS OPTIONAL - DEFAULT IS EU1 (Ireland)
     })
   ],
   providers: [],
