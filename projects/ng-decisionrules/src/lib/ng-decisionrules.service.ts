@@ -11,7 +11,7 @@ export class NgDecisionrulesService<T = any> {
   constructor(@Inject(DECISIONRULES_CONFIG) private config: DecisionRulesConfig, private http: HttpClient) {
   }
 
-  private apiUrl = this.endpointFactory(this.config.geoloc.geoloc);
+  private apiUrl = this.config.geoloc ? `http://${this.config.geoloc.geoloc}.api.decisionrules.io` : 'http://api.decisionrules.io'; 
 
   public solveRule(inputData: T, ruleId: string, version?: number): Promise<T> {
     let url: string;
@@ -31,11 +31,4 @@ export class NgDecisionrulesService<T = any> {
     }
   }
 
-  endpointFactory(geoloc: string): string {
-    if(geoloc) {
-      return `http://${geoloc}.api.decisionrules.io`;
-    } else {
-      return 'http://api.decisionrules.io';
-    }
-  }
 }
