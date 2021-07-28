@@ -1,7 +1,7 @@
 {
   "name": "@decisionrules/ng-decisionrules",
   "description": "Connect easily your Angular project with [Decisionrules.io](https://decisionrules.io)",
-  "version": "1.0.29",
+  "version": "1.1.0",
   "author": "Decisionrules.io",
   "license": "MIT",
   "scripts": {
@@ -14,7 +14,7 @@
     "pack-lib": "cd dist/ng-decisionrules && npm pack",
     "build-pack": "ng build ng-decisionrules && cd dist/ng-decisionrules && npm pack",
     "build-prod": "ng build --prod",
-    "publish": "cd dist/ng-decisionrules && npm publish"
+    "publish": "cd dist/ng-decisionrules && npm publish --acces public"
   },
   "private": false,
   "dependencies": {

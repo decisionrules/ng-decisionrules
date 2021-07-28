@@ -1,7 +1,7 @@
 {
   "name": "@decisionrules/ng-decisionrules",
   "description": "A simple Angular library that allows you to easily connect to Decisionrules.io from your web application.",
-  "version": "1.0.29",
+  "version": "1.1.0",
   "author": "Decisionrules.io",
   "repository": {
     "type": "git",
@@ -22,7 +22,8 @@
     "build-pack": "ng build ng-decisionrules && cd dist/ng-decisionrules && npm pack",
     "copy-readme": "copy README.md ..\\..\\README.md /y",
     "build": "npm run copy-readme && npm version patch && ng build --prod",
-    "publish": "cd ../../dist/ng-decisionrules && npm publish"
+    "publish": "cd ../../dist/ng-decisionrules && npm publish",
+    "build-prod": "ng build --prod"
   },
   "peerDependencies": {
     "@angular/common": "^10.1.6",

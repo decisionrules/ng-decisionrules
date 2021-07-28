@@ -1,7 +1,8 @@
-import { DecisionrulesAuth } from "./decisionrulesAuth";
-import { DecisionrulesGeoloc } from "./decisionrulesGeoloc";
+import { DecisionrulesAuth } from './decisionrulesAuth';
+import { DecisionrulesGeoloc } from './decisionrulesGeoloc';
 
 export interface DecisionRulesConfig {
     auth: DecisionrulesAuth;
-    geoloc?: DecisionrulesGeoloc;
+    customDomainUrl?: string;
+    geoLoc?: DecisionrulesGeoloc;
 }
