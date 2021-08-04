@@ -16,12 +16,14 @@ You can create your `API key` here: https://app.decisionrules.io/api-keys
 Import the `NgDecisionrulesModule` into your Angular application's module `AppModule`. Your application's main module might look like this:
 
 _app.module.ts_
+
 ````typescript
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
 import {NgDecisionrulesModule} from 'ng-decisionrules';
+import {CustomDomainModel, ProtocolEnum} from "./customDomainModel";
 
 @NgModule({
   declarations: [
@@ -32,13 +34,15 @@ import {NgDecisionrulesModule} from 'ng-decisionrules';
     AppRoutingModule,
     NgDecisionrulesModule.forRoot({
       auth: {token: 'YOUR_API_KEY_HERE'},
+      customDomain: new CustomDomainModel("custom domain url", ProtocolEnum.HTTPS);
       geoloc: {geoloc: 'PREFERED_GEOLOC_HERE'} // GEOLOC KEY-PAIR IS OPTIONAL - DEFAULT IS EU1 (Ireland)
     })
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
 ````
 
 
@@ -47,9 +51,12 @@ export class AppModule { }
 You can create rule on [Decisionrules dashboard](https://app.decisionrules.io)
 
 _app.component.ts_
+
 ````typescript
+import {SolverStrategyEnum} from "./solverStrategyEnum";
+
 export class AppComponent implements OnInit {
-  
+
   constructor(private decisionrulesService: NgDecisionrulesService) {
   }
 
@@ -59,7 +66,7 @@ export class AppComponent implements OnInit {
         age: 18
       }
     };
-    this.decisionrulesService.solveRule(inputData, 'YOUR_RULE_ID').then(data => {
+    this.decisionrulesService.solveRule(inputData, 'YOUR_RULE_ID', SolverStrategyEnum).then(data => {
       console.log(data);
     });
   }

@@ -17,7 +17,7 @@ export class NgDecisionrulesService<T = any> {
 
   public solveRule(inputData: T, ruleId: string, solverStrategy: SolverStrategyEnum, version?: number): Promise<T> {
 
-    const apiUrl = this.urlFactory(ruleId, this.config.customDomainUrl, version);
+    const apiUrl = this.urlFactory(ruleId, version);
 
     const data: InputData = {
       data: JSON.parse(JSON.stringify(inputData))
@@ -30,17 +30,19 @@ export class NgDecisionrulesService<T = any> {
     }
   }
 
-  private urlFactory(ruleId: string, customBaseUrl?: string, version?: number): string {
+  private urlFactory(ruleId: string, version?: number): string {
     let url;
 
-    if (typeof (customBaseUrl) === 'undefined' || customBaseUrl === '' || customBaseUrl === null) {
-      if (this.config.geoLoc.geoLoc === GeoLocEnum.DEFAULT) {
-        url = `https://${this.baseUrl}/`;
-      } else {
-        url = `https://${this.config.geoLoc.geoLoc}.${this.baseUrl}/`;
-      }
+    const config = this.config;
+
+    if (config.customDomain) {
+      url = `${config.customDomain.customDomainProtocol}://${config.customDomain.customDomainUrl}/rule/solve/`;
     } else {
-      url = `https://${customBaseUrl}/rule/solve/`;
+      if (config.geoLoc.geoLoc === GeoLocEnum.DEFAULT) {
+        url = `https://${this.baseUrl}/rule/solve/`;
+      } else {
+        url = `https://${config.geoLoc.geoLoc}.${this.baseUrl}/rule/solve/`;
+      }
     }
 
     if (version != null) {
