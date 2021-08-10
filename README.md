@@ -45,7 +45,15 @@ export class AppModule {
 }
 ````
 
+#### 3.1 Custom domain init
 
+If you are using custom domain you want to add CustomDomainModel to the NgDecisionrulesModule.forRoot
+
+Object CustomDomainModel takes string domain name and ProtocolEnum enum value as mandatory params.
+
+```typescript
+customDomain: new CustomDomainModel("your.domain.com", ProtocolEnum.HTTPS);
+```
 
 ### 4. Solve rule
 You can create rule on [Decisionrules dashboard](https://app.decisionrules.io)

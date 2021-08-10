@@ -34,7 +34,6 @@ import {CustomDomainModel, ProtocolEnum} from "./customDomainModel";
     AppRoutingModule,
     NgDecisionrulesModule.forRoot({
       auth: {token: 'YOUR_API_KEY_HERE'},
-      customDomain: new CustomDomainModel("custom domain url", ProtocolEnum.HTTPS);
       geoloc: {geoloc: 'PREFERED_GEOLOC_HERE'} // GEOLOC KEY-PAIR IS OPTIONAL - DEFAULT IS EU1 (Ireland)
     })
   ],
@@ -45,6 +44,15 @@ export class AppModule {
 }
 ````
 
+#### 3.1 Custom domain init
+
+If you are using custom domain you want to add CustomDomainModel to the NgDecisionrulesModule.forRoot
+
+Object CustomDomainModel takes string domain name and ProtocolEnum enum value as mandatory params.
+
+```typescript
+customDomain: new CustomDomainModel("your.domain.com", ProtocolEnum.HTTPS);
+```
 
 
 ### 4. Solve rule
