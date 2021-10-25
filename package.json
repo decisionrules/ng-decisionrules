@@ -1,12 +1,12 @@
 {
   "name": "@decisionrules/ng-decisionrules",
   "description": "Connect easily your Angular project with [Decisionrules.io](https://decisionrules.io)",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "author": "Decisionrules.io",
   "license": "MIT",
   "scripts": {
     "build": "ng build ng-decisionrules",
-    "build-prod": "npm run copy-readme && ng build ng-decisionrules --configuration production",
+    "build-prod": "npm run copy-readme && ng build ng-decisionrules",
     "publish": "cd dist/ng-decisionrules && npm publish --acces public",
     "copy-readme": "copy README.md projects\\ng-decisionrules\\"
   },

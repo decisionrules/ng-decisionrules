@@ -74,7 +74,7 @@ export class NgDecisionrulesPublicService{
   public deleteRuleByRuleIdAndVersion(ruleId: string, version: string |number): Promise<any> {
     const apiUrl = this.url + '/rule/' + ruleId + '/' + version.toString();
     try {
-      return this.httpClient.delete(apiUrl, {headers: this.headers});
+      return this.httpClient.delete(apiUrl, {headers: this.headers}).toPromise();
     } catch {
       throw new Error('ERROR: Delete rule by rule id and version call failed!');
     }
