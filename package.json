@@ -5,16 +5,10 @@
   "author": "Decisionrules.io",
   "license": "MIT",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "build-library": "ng build ng-decisionrules",
-    "pack-lib": "cd dist/ng-decisionrules && npm pack",
-    "build-pack": "ng build ng-decisionrules && cd dist/ng-decisionrules && npm pack",
-    "build-prod": "ng build --configuration production",
-    "publish": "cd dist/ng-decisionrules && npm publish --acces public"
+    "build": "ng build ng-decisionrules",
+    "build-prod": "npm run copy-readme && ng build ng-decisionrules --configuration production",
+    "publish": "cd dist/ng-decisionrules && npm publish --acces public",
+    "copy-readme": "copy README.md projects\\ng-decisionrules\\"
   },
   "private": false,
   "dependencies": {
