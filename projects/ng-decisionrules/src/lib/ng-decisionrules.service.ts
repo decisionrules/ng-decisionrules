@@ -5,6 +5,7 @@ import {DECISIONRULES_CONFIG} from './ng-decisionrules.module';
 import { DecisionRulesConfig } from './models/DecisionrulesConfig';
 import {SolverStrategyEnum} from './enums/solverStrategyEnum';
 import {GeoLocEnum} from './enums/geoLocEnum';
+import {SolverTypeEnum} from './enums/SolverTypeEnum';
 
 @Injectable({
   providedIn: 'root'
@@ -13,11 +14,12 @@ export class NgDecisionrulesService<T = any> {
   constructor(@Inject(DECISIONRULES_CONFIG) private config: DecisionRulesConfig, private http: HttpClient) {
   }
 
-  private baseUrl = 'api.decisionrules.io';
+  private baseUrl = 'https://api.decisionrules.io';
 
-  public solveRule(inputData: T, ruleId: string, solverStrategy: SolverStrategyEnum, version?: number): Promise<T> {
+  // tslint:disable-next-line:max-line-length
+  public solveRule(inputData: T, ruleId: string, solverStrategy: SolverStrategyEnum, solverType: SolverTypeEnum, version?: number): Promise<T> {
 
-    const apiUrl = this.urlFactory(ruleId, version);
+    const apiUrl = this.urlFactory(solverType, ruleId, version);
 
     const data: InputData = {
       data: JSON.parse(JSON.stringify(inputData))
@@ -30,28 +32,30 @@ export class NgDecisionrulesService<T = any> {
     }
   }
 
-  private urlFactory(ruleId: string, version?: number): string {
-    let url;
+  private urlFactory(solverType: SolverTypeEnum, ruleId: string, version?: number |string): string {
+    let url = `${this.baseUrl}/${solverType}/${ruleId}`;
 
-    const config = this.config;
+    if (this.config.customDomain) {
+      const domain = this.config.customDomain;
+      return `${domain.customDomainProtocol}://${domain.customDomainUrl}`;
+    }
 
-    if (config.customDomain) {
-      url = `${config.customDomain.customDomainProtocol}://${config.customDomain.customDomainUrl}/rule/solve/`;
-    } else {
-      if (config.geoLoc.geoLoc === GeoLocEnum.DEFAULT) {
-        url = `https://${this.baseUrl}/rule/solve/`;
-      } else {
-        url = `https://${config.geoLoc.geoLoc}.${this.baseUrl}/rule/solve/`;
+    if (this.config.geoLoc) {
+      if (this.config.geoLoc.geoLoc !== GeoLocEnum.DEFAULT) {
+        url = `https://${this.config.geoLoc.geoLoc}.api.decisionrules.io/${solverType}/${ruleId}`;
       }
     }
 
-    if (version != null) {
-      url += ruleId;
-    } else {
-      url += `${ruleId}/${version}`;
+    if (version) {
+      this.addVersion(url, version);
     }
 
     return url;
+
+  }
+
+  private addVersion(url: string, version: string | number): string{
+    return url += `/${version.toString()}`;
   }
 
 }

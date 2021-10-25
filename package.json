@@ -1,7 +1,7 @@
 {
   "name": "@decisionrules/ng-decisionrules",
   "description": "Connect easily your Angular project with [Decisionrules.io](https://decisionrules.io)",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "author": "Decisionrules.io",
   "license": "MIT",
   "scripts": {
