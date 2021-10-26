@@ -1,20 +1,17 @@
-import {Injectable} from '@angular/core';
+import {Inject, Injectable} from '@angular/core';
 import {DecisionRulesConfig} from './models/DecisionrulesConfig';
 import {GeoLocEnum} from './enums/geoLocEnum';
 import {HttpClient} from '@angular/common/http';
+import {DECISIONRULES_CONFIG} from './ng-decisionrules.module';
 
 @Injectable({
   providedIn: 'root'
 })
 export class NgDecisionrulesPublicService{
+  constructor(@Inject(DECISIONRULES_CONFIG) private config: DecisionRulesConfig, private httpClient: HttpClient) {}
 
-  private readonly url;
-  private readonly headers;
-
-  constructor(private config: DecisionRulesConfig, private httpClient: HttpClient) {
-    this.url = this.createUrl();
-    this.headers = {Authorization: `Bearer ${this.config.auth.managementToken}`, 'Content-Type': 'application/json'};
-  }
+  private url = this.createUrl();
+  private headers = {Authorization: `Bearer ${this.config.auth.managementToken}`, 'Content-Type': 'application/json'};
 
   private createUrl(): string{
     let url = `https://api.decisionrules.io/api`;

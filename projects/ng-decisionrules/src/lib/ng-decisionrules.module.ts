@@ -1,6 +1,6 @@
 import {ModuleWithProviders, NgModule} from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
-import { DecisionRulesConfig } from './models/DecisionrulesConfig';
+import {DecisionRulesConfig} from './models/DecisionrulesConfig';
 
 
 @NgModule({
@@ -12,6 +12,7 @@ import { DecisionRulesConfig } from './models/DecisionrulesConfig';
 })
 export class NgDecisionrulesModule {
   public static forRoot(config: DecisionRulesConfig): ModuleWithProviders<NgDecisionrulesModule> {
+
     return {
       ngModule: NgDecisionrulesModule,
       providers: [{provide: DECISIONRULES_CONFIG, useValue: config}]

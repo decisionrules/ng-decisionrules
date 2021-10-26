@@ -33,7 +33,7 @@ export class NgDecisionrulesService<T = any> {
   }
 
   private urlFactory(solverType: SolverTypeEnum, ruleId: string, version?: number |string): string {
-    let url = `${this.baseUrl}/${solverType}/${ruleId}`;
+    let url = `${this.baseUrl}/${solverType}/solve/${ruleId}`;
 
     if (this.config.customDomain) {
       const domain = this.config.customDomain;
@@ -42,7 +42,7 @@ export class NgDecisionrulesService<T = any> {
 
     if (this.config.geoLoc) {
       if (this.config.geoLoc.geoLoc !== GeoLocEnum.DEFAULT) {
-        url = `https://${this.config.geoLoc.geoLoc}.api.decisionrules.io/${solverType}/${ruleId}`;
+        url = `https://${this.config.geoLoc.geoLoc}.api.decisionrules.io/${solverType}/solve/${ruleId}`;
       }
     }
 

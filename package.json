@@ -5,8 +5,6 @@
   "author": "Decisionrules.io",
   "license": "MIT",
   "scripts": {
-    "build": "ng build ng-decisionrules",
-    "build-prod": "npm run copy-readme && ng build ng-decisionrules",
     "publish": "cd dist/ng-decisionrules && npm publish --acces public",
     "copy-readme": "copy README.md projects\\ng-decisionrules\\"
   },
