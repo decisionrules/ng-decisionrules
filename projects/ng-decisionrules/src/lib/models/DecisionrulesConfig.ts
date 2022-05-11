@@ -5,5 +5,4 @@ import {CustomDomainModel} from './customDomainModel';
 export interface DecisionRulesConfig {
     auth: DecisionrulesAuth;
     customDomain?: CustomDomainModel;
-    geoLoc?: DecisionrulesGeoloc;
 }
